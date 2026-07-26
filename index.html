@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahero Rice Farmers Market</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Hero Header -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>🌾 Ahero Rice Farmers Market</h1>
+            <p class="tagline">Direct Trade | Fair Prices | No Middlemen</p>
+            <p class="subtitle">Connecting Kisumu rice farmers directly with buyers for better market value</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#listings">Market Listings</a></li>
+                <li><a href="#prices">Price Index</a></li>
+                <li><a href="#helpers">Farming Helper</a></li>
+                <li><a href="#contact">Contact Farmers</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Market Listings Section -->
+        <section id="listings" class="section">
+            <h2>📊 Available Rice Listings</h2>
+            <div class="filters">
+                <input type="text" id="searchFilter" placeholder="Search by rice type or farmer name..." class="filter-input">
+                <select id="locationFilter" class="filter-select">
+                    <option value="">All Locations</option>
+                    <option value="Ahero">Ahero</option>
+                    <option value="Kano">Kano</option>
+                    <option value="Miwani">Miwani</option>
+                    <option value="Nyando">Nyando</option>
+                </select>
+                <select id="gradeFilter" class="filter-select">
+                    <option value="">All Grades</option>
+                    <option value="Grade 1">Grade 1</option>
+                    <option value="Grade 2">Grade 2</option>
+                    <option value="Super">Super</option>
+                </select>
+            </div>
+            <div id="listingsContainer" class="listings-grid">
+                <!-- Listings will be populated here by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Market Price Index Section -->
+        <section id="prices" class="section">
+            <h2>💰 Current Market Price Index</h2>
+            <p class="section-subtitle">Average wholesale prices per kg in KES (Last Updated: Today)</p>
+            <div class="price-grid">
+                <!-- Price cards will be populated here by JavaScript -->
+            </div>
+            <div class="price-note">
+                <p><strong>💡 Market Tip:</strong> Compare these average prices with farmer offers above. Direct purchase often yields 15-25% savings compared to middleman prices!</p>
+            </div>
+        </section>
+
+        <!-- Farmer Helper Widget -->
+        <section id="helpers" class="section">
+            <h2>🌱 Farmer Helper Widget</h2>
+            <div class="helper-grid">
+                <!-- Weather and Tips -->
+                <div class="helper-card weather-card">
+                    <h3>🌦️ Local Weather</h3>
+                    <div id="weatherWidget">
+                        <p><strong>Ahero, Kisumu</strong></p>
+                        <p id="weatherInfo">Loading weather data...</p>
+                        <p class="weather-detail">Conditions: Partly Cloudy</p>
+                        <p class="weather-detail">Humidity: 75%</p>
+                    </div>
+                </div>
+
+                <!-- Farming Tips -->
+                <div class="helper-card tips-card">
+                    <h3>📋 Harvesting Tips</h3>
+                    <ul class="tips-list">
+                        <li>📌 Harvest when grain moisture is 15-18%</li>
+                        <li>🌾 Cut early morning (8-11 AM) for better quality</li>
+                        <li>🏠 Dry rice to 14% moisture before storage</li>
+                        <li>📦 Store in cool, dry place away from moisture</li>
+                        <li>🐁 Use airtight containers to prevent pest damage</li>
+                    </ul>
+                </div>
+
+                <!-- Market Insights -->
+                <div class="helper-card insights-card">
+                    <h3>📈 Market Insights</h3>
+                    <ul class="insights-list">
+                        <li><strong>Peak Season:</strong> Oct-Nov (post-harvest)</li>
+                        <li><strong>Low Season:</strong> May-June</li>
+                        <li><strong>Best Buyers:</strong> Wholesalers (500kg+)</li>
+                        <li><strong>Quality Matters:</strong> Grade 1 fetches 20% more</li>
+                        <li><strong>Direct Sales Benefit:</strong> +15-25% over middlemen</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Farmers Section -->
+        <section id="contact" class="section">
+            <h2>📞 Contact Farmers Directly</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>Quick Contact Options</h3>
+                    <p>Select a farmer from the listings above and use the <strong>Contact Farmer</strong> button to reach out directly via:</p>
+                    <ul class="contact-methods">
+                        <li>📱 <strong>WhatsApp:</strong> Direct messaging for quick inquiries</li>
+                        <li>☎️ <strong>Phone Call:</strong> Negotiate directly and build relationships</li>
+                        <li>📧 <strong>Email:</strong> For formal orders and invoices</li>
+                    </ul>
+                </div>
+
+                <div class="contact-form-card">
+                    <h3>Buyer Interest Form</h3>
+                    <form id="buyerForm" class="buyer-form">
+                        <div class="form-group">
+                            <label for="buyerName">Your Name:</label>
+                            <input type="text" id="buyerName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="buyerType">Buyer Type:</label>
+                            <select id="buyerType" required>
+                                <option value="">Select Type</option>
+                                <option value="Wholesaler">Wholesaler</option>
+                                <option value="Retailer">Retailer</option>
+                                <option value="Consumer">Consumer/Cooperative</option>
+                                <option value="Exporter">Exporter</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="buyerQuantity">Quantity Needed (kg):</label>
+                            <input type="number" id="buyerQuantity" min="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="buyerPhone">Your Phone:</label>
+                            <input type="tel" id="buyerPhone" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit Interest</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Ahero Rice Farmers Market | Empowering Kisumu farmers through direct trade</p>
+        <p>Built for the farming community of Ahero, Kisumu County, Kenya 🇰🇪</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
